@@ -11,16 +11,16 @@ function deepCopy(obj) {
 export default (state = defaultState, action) => {
   let stateCopy;
   switch (action.type) {
-    case "value":
+    case "input_value":
       return Object.assign({}, state, { value: action.value });
-    case "listItem":
+    case "add_item":
       stateCopy = deepCopy(state)
       stateCopy.value = ""
       stateCopy.list.push(action.value)
       return stateCopy
-    case "deleteItem":
+    case "delete_item":
       stateCopy = deepCopy(state)
-      stateCopy.list.splice(action.value, 1)
+      stateCopy.list.splice(action.index, 1)
       return stateCopy
     default:
       return state;
