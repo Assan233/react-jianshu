@@ -12,8 +12,10 @@ export class TodoList extends Component {
     super(props)
     this.state = {}
 
+
     // redux添加订阅, store的tate变化时, 去更新视图
     store.subscribe(this.storeChange)
+    console.log(this.state);
   }
 
   storeChange = () => {
@@ -42,7 +44,10 @@ export class TodoList extends Component {
     return (
       <div className="list-wrap">
         <Input style={{ width: "350px", marginRight: "10px" }} value={this.state.value} onChange={(ev) => { this.handleInput(ev) }}></Input>
-        <Button type="primary" onClick={this.handleSubmit}>提交</Button>
+        <Button
+          type="primary"
+          onClick={this.handleSubmit}
+        >提交</Button>
         <List
           header={<h3>This is a title</h3>}
           footer={<h3>This is a footer</h3>}
