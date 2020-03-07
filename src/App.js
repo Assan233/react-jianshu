@@ -1,7 +1,7 @@
 import React from "react"
 
 // 引入组件
-import TodoList from "./components/TodoList"
+import TodoList from "./pages/TodoList"
 class App extends React.Component {
 
   render() {
